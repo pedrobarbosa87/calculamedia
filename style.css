@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'retro';
+    src: url('fonts/HEINEKEN.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(45, 107, 131);
+    color: rgb(3, 11, 3);
+    font-family: 'retro', Times, serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+table{
+    width: 50%;
+    margin-bottom : .5em;   
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th {
+    display: flexbox;
+    padding: .7em;
+    margin: 0;
+    border: 1px solid #ccc;
+    text-align: center;
+    border: solid;
+}

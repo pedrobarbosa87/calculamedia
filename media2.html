@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Alunos</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./media.js" defer=""></script>
+</head>
+<body bgcolor="white">
+    <h1 align = left>Notas Alunos - Programacao WEB</h1>
+    
+
+    <left>
+    <table border="1" cellspacing="5" bgcolor="white">
+        <caption><b>Quadro de Notas</b></caption>
+        <tr>
+            <th rowspan="2">Nome do Aluno</th>
+            <th rowspan="2">Matricula</th>
+            <th colspan="4">Notas do Aluno</th>
+            
+        </tr>
+        <tr>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th colspan="2">Nota 3</th>
+            
+        </tr>
+        <tr>
+            <td><input type="text" id="nome" ></td>
+            <td><input type="text" id="matricula"></td>
+            <td><input type="text" id="n1"></td>
+            <td><input type="text" id="n2"></td>
+            <td colspan="2"><input type="text" id="n3"></td>
+
+        </tr>
+        <tr>
+            <th colspan="6" height="30">
+            <input type="submit" value="Adicionar Aluno" onclick="calculaMedia()"></th>
+        </tr>
+    </table>
+    <br>
+    <table border="2" cellspacing="5" bgcolor="white" height="100" width="500" cellpadding="5" id="TableScore">
+        <caption><b>Quadro Resumo</b></caption>
+        <tr>
+            <th width="100">Nome do Aluno</th>
+            <th>Matricula</th>
+            <th>Pontuacao total</th>
+            <th>Media</th>
+            <th>Situacao do Aluno</th>
+        </tr>
+    </table>
+    </center>
+    <script type="text/javascript">
+    function calculaMedia(){
+        var n, k, r, e, v, soma, media;
+        n=(document.getElementById('nome').value);
+        k=(document.getElementById('matricula').value);
+        r=parseFloat(document.getElementById('n1').value);
+        e=parseFloat(document.getElementById('n2').value);
+        v=parseFloat(document.getElementById('n3').value);
+        // Calculating Total
+        soma=r+e+v;
+        media=soma/3;
+        // Display on Student Data
+        var newTable = document.getElementById('TableScore');
+        var row = newTable.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(0);
+        var cell3 = row.insertCell(0);
+        var cell4 = row.insertCell(0);
+        var cell5 = row.insertCell(0);
+        
+        cell5.innerHTML= n;
+        cell4.innerHTML= k;
+        cell3.innerHTML=soma;
+        cell2.innerHTML = media;
+        
+
+        if(media>=7){
+            cell1.innerHTML="<font color=green>Aprovado</font>";
+        }else{
+            cell1.innerHTML="<font color=red>Reprovado</font>";
+        }
+    }
+</script>
+</body>
+</html>
+
+    
+   
+
